@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from '../models/client';
+import { ClientsService } from '../services/clients.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -10,7 +12,7 @@ export class DashboardComponent implements OnInit {
         name: 'Jean'
     };
 
-    clients = [
+    clients: Client[] = [
         {
             name: 'Lego'
         },
@@ -36,9 +38,14 @@ export class DashboardComponent implements OnInit {
             logo: null
         }
     ];
-    constructor() { }
+    constructor(private clientsService: ClientsService) { }
 
     ngOnInit(): void {
+        this.getClients();
+    }
+
+    getClients() {
+        this.clients = this.clientsService.getClients();
     }
 
 }

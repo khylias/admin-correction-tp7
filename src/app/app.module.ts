@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { ClientsService } from './services/clients.service';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,9 @@ import { MatListModule } from '@angular/material/list';
         MatSidenavModule,
         MatListModule
     ],
-    providers: [],
+    providers: [
+        ClientsService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
