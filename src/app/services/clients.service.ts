@@ -22,4 +22,8 @@ export class ClientsService {
     getClients(): Client[] {
         return this.clients;
     }
+
+    addClient(data: Client) {
+        this.clients.push(data);
+    }
 }

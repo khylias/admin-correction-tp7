@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ClientFormComponent } from './client-form/client-form.component';
 import { ClientsComponent } from './clients/clients.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SkillsComponent } from './skills/skills.component';
@@ -11,7 +12,16 @@ const routes: Routes = [
     },
     {
         path: 'clients',
-        component: ClientsComponent
+        children: [
+            {
+                path: '',
+                component: ClientsComponent
+            },
+            {
+                path: 'nouveau',
+                component: ClientFormComponent
+            },
+        ]
     },
     {
         path: 'dashboard',
