@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -36,6 +37,7 @@ import { ClientFormComponent } from './client-form/client-form.component';
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
+        HttpClientModule,
         FormsModule,
         BrowserAnimationsModule,
         MatSidenavModule,

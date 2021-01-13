@@ -45,7 +45,9 @@ export class DashboardComponent implements OnInit {
     }
 
     getClients() {
-        this.clients = this.clientsService.getClients();
+        this.clientsService.getClients().subscribe(response => {
+            this.clients = response;
+        });
     }
 
 }

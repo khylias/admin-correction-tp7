@@ -16,6 +16,8 @@ export class ClientsComponent implements OnInit {
     }
 
     getClients() {
-        this.clients = this.clientsService.getClients();
+        this.clientsService.getClients().subscribe(response => {
+            this.clients = response;
+        });
     }
 }

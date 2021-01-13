@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ClientsService } from '../services/clients.service';
 
 @Component({
@@ -12,14 +13,17 @@ export class ClientFormComponent implements OnInit {
     public form: FormGroup;
 
     constructor(private clientsService: ClientsService,
-        private fb: FormBuilder) { }
+        private fb: FormBuilder,
+        private router: Router) { }
 
     ngOnInit(): void {
         this.initForm();
     }
 
     add() {
-        this.clientsService.addClient(this.form.value);
+        this.clientsService.addClient(this.form.value).subscribe(response => {
+            this.router.navigate(['/clients']);
+        });
     }
 
     initForm() {
